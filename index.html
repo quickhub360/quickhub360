@@ -34,32 +34,35 @@
     }
 
     .social-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
       margin-top: 20px;
     }
 
     .social-links a {
-      display: inline-block;
-      margin: 0 12px;
-      text-decoration: none;
-      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       font-size: 16px;
-      border-bottom: none;
-      transition: all 0.3s ease;
+      font-weight: bold;
+      text-decoration: none;
+      transition: opacity 0.3s ease;
     }
-
-    .facebook { color: #1877f2; }   /* Blue */
-    .instagram { color: #e1306c; }  /* Pink/Red */
-    .whatsapp { color: #25d366; }   /* Green */
-    .tiktok { color: #000000; }     /* Black */
 
     .social-links a:hover {
       opacity: 0.75;
     }
 
-    .contact {
-      margin-top: 30px;
-      font-size: 16px;
-      color: #666;
+    .facebook { color: #1877f2; }
+    .instagram { color: #e1306c; }
+    .whatsapp { color: #25d366; }
+    .tiktok { color: #000000; }
+
+    .social-icon {
+      width: 20px;
+      height: 20px;
     }
 
     .whatsapp-link {
@@ -75,6 +78,12 @@
 
     .whatsapp-link a:hover {
       opacity: 0.8;
+    }
+
+    .contact {
+      margin-top: 30px;
+      font-size: 16px;
+      color: #666;
     }
 
     @media screen and (max-width: 600px) {
@@ -95,13 +104,30 @@
   🛍️ Online Shopping, 💳 Payments, 💼 Jobs, 🏠 Rentals, and more — all in one platform. Stay connected and be part of our journey! 🚀</p>
 
   <div class="social-links">
-    <a href="https://www.facebook.com/quickhub360uae/" target="_blank" style="display: inline-flex; align-items: center; text-decoration: none; color: #1877F2;">
-  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 320 512" fill="#1877F2"><path d="M279.14 288l14.22-92.66h-88.91V127.9c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S284.43 0 248.65 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H89.33V288h38.24v224h92.66V288z"/></svg>
-  <span style="margin-left: 8px;">Facebook</span>
-</a>
-    <a href="#" class="instagram">📸 Instagram</a>
-    <a href="https://wa.me/971568082732" target="_blank" class="whatsapp">💬 Call WhatsApp</a>
-    <a href="#" class="tiktok">🎵 TikTok</a>
+
+    <a href="https://www.facebook.com/quickhub360uae" class="facebook" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" class="social-icon" alt="Facebook Logo" />
+      Facebook Page
+    </a>
+
+    <a href="https://www.facebook.com/groups/quickhub360" class="facebook" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" class="social-icon" alt="Facebook Logo" />
+      Facebook Group
+    </a>
+
+    <a href="https://www.instagram.com/quickhub360uae/" class="instagram" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="social-icon" alt="Instagram Logo" />
+      Instagram
+    </a>
+
+    <a href="https://wa.me/971568082732" class="whatsapp" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="social-icon" alt="WhatsApp Logo" />
+      Call WhatsApp
+    </a>
+
+    <a href="#" class="tiktok">
+      🎵 TikTok (Coming Soon)
+    </a>
   </div>
 
   <div class="whatsapp-link">
