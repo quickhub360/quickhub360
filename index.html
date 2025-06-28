@@ -3,139 +3,229 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Welcome to Quick Hub 360 UAE</title>
+  <title>Quick Hub 360 UAE – Online Marketplace</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #ffffff;
-      color: #333333;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #fefefe, #f6f2eb);
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: #333;
       text-align: center;
+      padding: 40px 20px;
     }
 
     h1 {
-      font-size: 42px;
-      color: #ff9800;
+      font-size: 40px;
+      color: #b71c1c;
       margin-bottom: 10px;
     }
 
-    p {
-      font-size: 18px;
-      max-width: 650px;
-      margin-bottom: 25px;
-      line-height: 1.6;
+    h2 {
+      font-size: 22px;
       color: #444;
+      margin-bottom: 10px;
+    }
+
+    .coming-soon {
+      font-size: 26px;
+      font-weight: bold;
+      color: #d84315;
+      margin: 20px 0;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      animation: glow 2s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px #ff6, 0 0 10px #ff9800; }
+      50% { text-shadow: 0 0 15px #ff9800, 0 0 20px #ffc107; }
+      100% { text-shadow: 0 0 5px #ff6, 0 0 10px #ff9800; }
+    }
+
+    .maintenance-highlight {
+      font-size: 20px;
+      color: #d84315;
+      background-color: #fff7ec;
+      padding: 10px 20px;
+      border: 2px solid #ffcc80;
+      border-radius: 12px;
+      display: inline-block;
+      margin: 20px 0;
+      font-weight: bold;
+      animation: pulseHighlight 2s infinite ease-in-out;
+      box-shadow: 0 0 10px rgba(255, 152, 0, 0.15);
+    }
+
+    @keyframes pulseHighlight {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.03); opacity: 0.9; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    p {
+      max-width: 700px;
+      margin: 0 auto 20px;
+      font-size: 18px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .input-form {
+      margin-top: 30px;
+    }
+
+    input[type="tel"] {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      width: 250px;
+      max-width: 80%;
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #b71c1c;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      opacity: 0.9;
     }
 
     .social-links {
+      margin-top: 40px;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      margin-top: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
     }
 
     .social-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 16px;
-      font-weight: bold;
       text-decoration: none;
-      transition: opacity 0.3s ease;
+      color: inherit;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      background: #ffffffcc;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
     }
 
     .social-links a:hover {
-      opacity: 0.75;
+      transform: scale(1.05);
     }
-
-    .facebook { color: #1877f2; }
-    .instagram { color: #e1306c; }
-    .whatsapp { color: #25d366; }
-    .tiktok { color: #000000; }
 
     .social-icon {
       width: 20px;
       height: 20px;
     }
 
-    .whatsapp-link {
-      margin-top: 20px;
+    .contact {
+      margin-top: 40px;
+      font-size: 18px;
+      color: #222;
     }
 
-    .whatsapp-link a {
-      color: #25d366;
-      font-weight: bold;
+    .ceo-call {
+      margin-top: 15px;
       font-size: 16px;
+      font-weight: bold;
+    }
+
+    .ceo-call span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      font-size: 18px;
+      margin: 5px 0;
+    }
+
+    .flag {
+      width: 22px;
+      height: 16px;
+      border: 1px solid #ccc;
+      object-fit: cover;
+    }
+
+    .ceo-call a {
+      color: #00796b;
       text-decoration: none;
     }
 
-    .whatsapp-link a:hover {
-      opacity: 0.8;
-    }
-
-    .contact {
-      margin-top: 30px;
-      font-size: 16px;
-      color: #666;
-    }
-
-    @media screen and (max-width: 600px) {
-      h1 {
-        font-size: 30px;
-      }
-
-      p {
-        font-size: 16px;
-      }
+    .ceo-call a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <h1>👋 Welcome to Quick Hub 360 UAE </h1>
-  <p>We’re working hard to launch something amazing! 🎯<br>
-  🛍️ Online Shopping, 💳 Payments, 💼 Jobs, 🏠 Rentals, and more — all in one platform. Stay connected and be part of our journey! 🚀</p>
+  <h1>🚀 Quick Hub 360 UAE</h1>
+  <h2>Buy • Sell • Rent • Hire — All in One Place</h2>
 
-  <div class="social-links">
+  <div class="coming-soon">✨ COMING SOON ✨</div>
 
-    <a href="https://www.facebook.com/quickhub360uae" class="facebook" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" class="social-icon" alt="Facebook Logo" />
-      Facebook Page
-    </a>
+  <div class="maintenance-highlight">🛠️ <strong>We Are Under Maintenance</strong></div>
 
-    <a href="https://www.facebook.com/groups/quickhub360" class="facebook" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" class="social-icon" alt="Facebook Logo" />
-      Facebook Group
-    </a>
+  <p>From phones and laptops to vehicles, jobs, rooms, rentals and services – Quick Hub 360 UAE is your one-stop marketplace. Stay tuned while we build something powerful for the UAE.</p>
 
-    <a href="https://www.instagram.com/quickhub360uae/" class="instagram" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="social-icon" alt="Instagram Logo" />
-      Instagram
-    </a>
-
-    <a href="https://wa.me/971568082732" class="whatsapp" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="social-icon" alt="WhatsApp Logo" />
-      Call WhatsApp
-    </a>
-
-    <a href="#" class="tiktok">
-      🎵 TikTok (Coming Soon)
-    </a>
+  <div class="input-form">
+    <form onsubmit="event.preventDefault(); alert('Thank you! We’ll contact you shortly.');">
+      <input type="tel" placeholder="📞 Enter your number" required />
+      <button type="submit">Submit</button>
+    </form>
   </div>
 
-  <div class="whatsapp-link">
-    📲 <a href="https://wa.me/971568082732?text=Hello%20Quick%20Hub%20360%2C%20I%27m%20interested%20in%20your%20services" target="_blank">Click to Chat on WhatsApp</a>
+  <div class="social-links">
+    <a href="https://www.facebook.com/quickhub360uae" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" class="social-icon" alt="Facebook" />
+      Facebook Page
+    </a>
+    <a href="https://www.facebook.com/groups/quickhub360" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" class="social-icon" alt="Facebook Group" />
+      Facebook Group
+    </a>
+    <a href="https://www.instagram.com/quickhub360uae/" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="social-icon" alt="Instagram" />
+      Instagram
+    </a>
+    <a href="https://wa.me/971568082732" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="social-icon" alt="WhatsApp" />
+      WhatsApp
+    </a>
+    <a href="#">🎵 TikTok (Coming Soon)</a>
   </div>
 
   <div class="contact">
-    📞 Call us: <strong>056 808 2732</strong>
+    📞 General Inquiries: <strong>056 808 2732</strong>
+  </div>
+
+  <div class="ceo-call">
+    📞 Call CEO Dinesh Directly:
+    <span>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_United_Arab_Emirates.svg" class="flag" alt="UAE Flag" />
+      <a href="tel:+971568082732">056 808 2732</a>
+    </span>
+    <span>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Flag_of_Sri_Lanka.svg" class="flag" alt="Sri Lanka Flag" />
+      <a href="tel:+94774707651">077 470 7651</a>
+    </span>
   </div>
 
 </body>
